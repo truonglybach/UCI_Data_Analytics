@@ -1,5 +1,5 @@
 Sub hardVBA()
-'This is the code for the moderate version of assignment 2
+'This is the code for the hard version of assignment 2
 
 
 For Each ws In Worksheets
