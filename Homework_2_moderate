@@ -1,0 +1,83 @@
+Sub modVBA()
+'This is the code for the moderate version of assignment 2
+
+
+For Each ws In Worksheets
+'create variable to store values for total volume, ticker name, each row per ticker, etc.
+    Dim ticker_name As String
+    Dim open_sum as Double
+    open_sum = 0
+    Dim close_sum as Double
+    close_sum = 0
+    Dim avg_open_sum as Double
+    Dim avg_close_sum as Double
+    Dim denominator_count as Integer
+    denominator_count = 0
+    Dim yearly_change as Double
+    Dim percent_change as Double
+    Dim total_volume As Double
+    total_volume = 0
+    Dim Summary_Table_row As Integer
+    Summary_Table_row = 2
+
+'create headers for ticker and total stock volume
+    ws.Cells(1, 9).Value = "Ticker"
+    ws.Cells(1, 10).Value = "Yearly Change"
+    ws.Cells(1, 11).Value = "Percent Change"
+    ws.Cells(1, 12).Value = "Total Stock Volume"
+
+'create value for the last row of the for loop
+    lastRowIndex = ws.Cells(Rows.Count, "A").End(xlUp).Row
+
+'create an if then statement that will push the collected info to the appropriate columns
+'if the next ticker is not equal to the current one
+    For i = 2 To lastRowIndex
+        If ws.Cells(i + 1, 1).Value <> ws.Cells(i, 1).Value Then
+            ticker_name = ws.Cells(i, 1).Value
+            open_sum = open_sum + ws.Cells(i, 3).Value
+            close_sum = close_sum + ws.Cells(i, 6).Value
+            avg_close_sum = close_sum / denominator_count
+            avg_open_sum = open_sum / denominator_count
+            yearly_change = avg_close_sum - avg_open_sum
+            percent_change = yearly_change / avg_open_sum
+            total_volume = total_volume + ws.Cells(i, 7).Value
+            ws.Range("I" & Summary_Table_row).Value = ticker_name
+            ws.Range("J" & Summary_Table_row).Value = yearly_change
+            ws.Range("K" & Summary_Table_row).Value = percent_change
+            ws.Range("L" & Summary_Table_row).Value = total_volume
+            Summary_Table_row = Summary_Table_row + 1
+            denominator_count = 0
+            total_volume = 0
+        Else
+        	open_sum = open_sum + ws.Cells(i, 3).Value
+        	close_sum = close_sum + ws.Cells(i, 6).Value
+        	denominator_count = denominator_count + 1
+            total_volume = total_volume + ws.Cells(i, 7).Value
+        End If
+    Next i
+
+'create value for the last row of the new percent_change column
+lastRow_percent_change = ws.Cells(Rows.Count, "K").End(xlUp).Row
+'conditional formatting for positive/negative change
+	For i = 2 To lastRow_percent_change
+		If ws.Cells(i, 11).Value > 0 Then
+		ws.Cells(i, 11).Interior.ColorIndex = 4
+		ElseIf ws.Cells(i, 11).Value = 0 Then
+		ws.Cells(i, 11).Interior.ColorIndex = 6
+		Else
+		ws.Cells(i, 11).Interior.ColorIndex = 3
+		End If
+	Next i
+
+'set percent_change column to percentage format
+	For i = 2 to lastRow_percent_change
+		Cells(i, 11).NumberFormat = "00.00%"
+	Next i
+'autofit columns for neatness
+    Columns.AutoFit
+
+Next ws
+
+MsgBox ("Fixes Complete")
+
+End Sub
