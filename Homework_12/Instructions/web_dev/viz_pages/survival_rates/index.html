@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Survival Rates Visualization</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+<section>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <li class="navbar-brand"><a href="../../landing_page/index.html"><img src="../../landing_page/pymaceuticals_edited.png" alt="Home Page" height=50px width=250px></a></li>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Plots
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="../../viz_pages/tumor_response/index.html">Tumor Response Visualization</a></li>
+          <div class="dropdown-divider"></div>
+          <li><a class="dropdown-item" href="../../viz_pages/metastatic_response/index.html">Metastatic Response Visualization</a></li>
+          <div class="dropdown-divider"></div>
+          <li><a class="dropdown-item" href="../../viz_pages/survival_rates/index.html">Survival Rate Visualization</a></li>
+          <div class="dropdown-divider"></div>
+          <li><a class="dropdown-item" href="../../viz_pages/per_change/index.html">Tumor Percentage Change Visualization</a></li>
+        </ul>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="../../landing_page/pymaceuticals_starter.html" target="_blank">Full Analysis</a>
+      </li>
+    </ul>
+  
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="../../comparison_page/index.html">Comparison</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../data_pages/mouseid_vs_tumorvol/index.html">Mouse vs. Tumor Data</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../data_pages/mouseid_vs_drug/index.html">Mouse vs. Drug Data</a>
+        </li>
+    </ul>
+  </div>
+</nav>
+</section>
+
+<br/>
+<br/>
+
+<section>
+  <div class="container">
+    <div class="jumbotron">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="text-center">Survival Rates of Mice Over 45 Days</h2>
+        </div>
+      </div>
+    </br>
+      <div class="row">
+        <div class="col-md-12">
+          <figure>
+          <a href="survival_rates.png" target="_blank"><img src="survival_rates.png" alt="Here is a line graph that depicts the number of mice per drug group against the number of days." height=500 width=800 class="main-img"></a>
+          </figure>
+        </br>
+          <figcaption>
+            <p>This line chart depicts the number of mice per drug group over the span of 45 days. Mice that were treated with Capomulin survived more often than mice that were treated with any other drug. Intriguingly enough, considering that Ketapril had led to an increase of tumor volume, it was second best at prolonging the lives of the mice that received the drug.</p>
+          </figcaption>
+        </div>
+      </div>
+    </div>
+  </div>
+  </br>
+  </br>
+</section>
+
+
+</body>
+</html>
+

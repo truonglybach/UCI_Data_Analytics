@@ -1,0 +1,24 @@
+body, html {
+  height: 100%;
+}
+nav.bg-dark {
+  background-color: #000;
+}
+.jumbotron {
+  background-color: #F8F9FA;
+}
+.btn {
+  color: #F8F9FA;
+}
+.bg {
+  /* The image used */
+  background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
