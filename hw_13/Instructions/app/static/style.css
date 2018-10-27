@@ -1,0 +1,49 @@
+html {
+	height: 100%;
+	background-color: black;
+}
+
+body {
+	padding-bottom: 30px;
+	background-color: black;        
+}
+
+ul{
+	text-align: justify;
+	font-size: 0.1px;
+}
+
+ul li {
+	display: inline-block;
+}
+
+ul:after {
+	content: '';
+	width: 100%;
+	display: inline-block;
+}
+
+.table th {
+    text-align: center;
+}
+
+.table {
+    border-radius: 5px;
+    width: 50%;
+    margin: 0px auto;
+    float: none;
+}
+
+.img-fluid {
+	max-width: 100%;
+	height: auto;
+}
+
+.footer {
+	position: fixed;
+	background-color: blue;
+	bottom: 0;
+  	left: 0;
+  	width: 100%;
+  	height: 30px;
+}
