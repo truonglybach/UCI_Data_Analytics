@@ -26,6 +26,7 @@ def index():
 	for i in mars_table_facts_value:
 	    mars_stats.append(list(mars_table_facts_value[mars_table_facts_value.index(i)].values())[0])
 	    st_data.append(list(mars_table_facts_value[mars_table_facts_value.index(i)].values())[1])
+	table_data = list(zip(mars_stats, st_data))
 	mars_hemispheres_value = list(data[5].values())[1]
 	hemi_values_list = []
 	for i in mars_hemispheres_value:
@@ -37,7 +38,7 @@ def index():
 	for i in hemi_values_list_rf:
 	    img_url_src.append(i[1])
 
-	return render_template("index.html", news_title_key=news_title_key, news_title_value=news_title_value, news_p_value=news_p_value, feat_img_url_value=feat_img_url_value, latest_tweet_value=latest_tweet_value, mars_stats=mars_stats, st_data=st_data, img_url_src=img_url_src)
+	return render_template("index.html", news_title_key=news_title_key, news_title_value=news_title_value, news_p_value=news_p_value, feat_img_url_value=feat_img_url_value, latest_tweet_value=latest_tweet_value, mars_stats=mars_stats, st_data=st_data, table_data=table_data, img_url_src=img_url_src)
 
 # create a route that imports my scrape function
 @app.route("/scrape")
